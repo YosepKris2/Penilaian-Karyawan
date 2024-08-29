@@ -1,0 +1,380 @@
+/* Reset dasar */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    to right,
+    #6a11cb,
+    #2575fc
+  ); /* Background gradient untuk tampilan lebih menarik */
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Pastikan latar belakang memenuhi tinggi layar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 80%; /* Lebar lebih besar untuk membuat konten lebih panjang */
+  max-width: 1200px; /* Lebar maksimum kontainer */
+  margin: 20px auto;
+  background-color: #fff; /* Latar belakang putih */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: auto; /* Menjamin bahwa konten di dalam container dapat di-scroll */
+}
+
+/* Header dan Label */
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+  font-size: 16px; /* Ukuran font yang lebih besar */
+}
+
+/* Input dan Tombol */
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+  width: 100%; /* Menjamin lebar input sesuai dengan kontainer */
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Mengatur box-sizing untuk memastikan padding dan border tidak menambah ukuran total */
+  white-space: nowrap; /* Menghindari teks dibungkus */
+  overflow: hidden; /* Menyembunyikan teks yang melampaui lebar kontainer */
+  text-overflow: ellipsis; /* Menampilkan elipsis jika teks terpotong */
+}
+
+/* Tombol */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Tambahkan transisi */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Kontainer spesifik */
+.login-container,
+.dashboard-container,
+.hasil-container,
+.input-container,
+.detail-container {
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff; /* Latar belakang putih */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container {
+  width: 100%; /* Mengatur lebar kontainer untuk menyesuaikan lebar layar */
+  max-width: 1500px; /* Lebar maksimum kontainer */
+  height: 90vh; /* Mengatur tinggi kontainer dashboard */
+  overflow-y: auto; /* Menambahkan scrollbar vertikal jika diperlukan */
+}
+
+/* Tabel */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+
+th,
+td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 14px;
+  overflow: hidden; /* Menghindari teks meluber dari sel */
+  text-overflow: ellipsis; /* Menggunakan ellipsis jika teks terlalu panjang */
+  white-space: nowrap; /* Mencegah teks membungkus */
+}
+
+th {
+  background-color: #f8f9fa;
+  color: #333;
+  font-weight: bold;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0; /* Menjaga header tabel tetap di atas saat scroll */
+  z-index: 1; /* Pastikan header tabel selalu di atas konten */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+/* Link aksi */
+.action-link {
+  text-decoration: none;
+  color: #007bff;
+  padding: 6px 12px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  margin: 0 4px;
+  display: inline-block;
+  font-size: 12px;
+  white-space: nowrap; /* Mencegah teks membungkus */
+}
+
+.action-link:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Tombol Hapus */
+.delete {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.delete:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Tombol kembali dan tombol cetak */
+.back-button a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.back-button a:hover {
+  background-color: #0056b3;
+}
+
+.no-print {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.no-print button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.no-print a {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.no-print a:hover {
+  background-color: #0056b3;
+}
+
+/* CSS untuk cetak */
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 12pt; /* Menyesuaikan ukuran font untuk cetak */
+  }
+  .detail-container {
+    margin: 0;
+    padding: 10px;
+    border: 1px solid #ddd; /* Border di sekeliling konten */
+    background-color: #fff;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    text-align: center; /* Menengahkan konten */
+    box-shadow: none; /* Menghilangkan bayangan */
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto; /* Menengahkan tabel di halaman */
+  }
+  th,
+  td {
+    border: 1px solid black; /* Border tabel untuk cetakan */
+    padding: 8px;
+    text-align: left;
+    font-size: 12pt; /* Menyesuaikan ukuran font untuk cetak */
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  .print-button,
+  .back-button {
+    display: none;
+  }
+  @page {
+    size: A4; /* Ukuran kertas A4 */
+    margin: 20mm; /* Margin kertas */
+  }
+}
+
+/* Tombol Print */
+.print-button-container {
+  margin: 20px 0;
+  text-align: right;
+}
+
+.print-button {
+  padding: 8px 12px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.print-button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Media Query untuk ukuran kecil */
+@media (max-width: 768px) {
+  .detail-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  table {
+    font-size: 12px;
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
+  }
+
+  th,
+  td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .action-link {
+    font-size: 10px;
+    padding: 4px 8px;
+    margin: 0 2px;
+  }
+
+  .print-button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+/* Penyesuaian rating dan tombol aksi */
+.rating-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.rating-group label {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: calc(10% - 5px); /* Lebar 10% dikurangi jarak antara elemen */
+  height: calc(10% - 5px); /* Tinggi sama dengan lebar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  text-align: center;
+  margin: 2px; /* Jarak antar lingkaran */
+}
+
+.rating-group input[type="radio"] {
+  display: none;
+}
+
+.rating-group input[type="radio"]:checked + label {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #28a745;
+  color: #fff;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+@media print {
+  .rating-group {
+    page-break-inside: avoid;
+  }
+}
+
+.logout-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #007bff;
+  color: #ffffff;
+  border-color: #007bff;
+}
+
+.logout-button:active {
+  background-color: #0056b3;
+  color: #ffffff;
+  border-color: #0056b3;
+}
+
+.logout-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5);
+}
